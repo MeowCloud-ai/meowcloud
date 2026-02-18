@@ -1,0 +1,22 @@
+# CLAUDE.md — {{PROJECT_NAME}} 開發指引
+
+## 專案概述
+- **名稱**: {{PROJECT_NAME}}
+- **類型**: {{PROJECT_TYPE}}
+- **目標**: {{PROJECT_GOAL}}
+
+## 技術棧
+<!-- 根據專案需求填寫 -->
+
+## 開發規範
+- TypeScript strict mode
+- ESLint + Prettier
+- 命名：camelCase（變數/函數）、PascalCase（元件/型別）
+- 每個模組都要有對應測試
+- 每個 PR 都要有描述 + 關聯 Issue
+
+## 架構重點
+<!-- 根據 ARCHITECTURE.md 摘要關鍵設計 -->
+
+## 注意事項
+<!-- 專案特殊注意事項 -->

@@ -97,6 +97,34 @@ bash scripts/init-project.sh <project-name>
 
 初始化後，進入 Phase 0 開始需求收集。
 
+## 文件體系
+
+每個專案必須維護以下六類文件，隨開發流程逐步產出：
+
+### 📋 文件清單與產出時機
+
+| 類別 | 文件 | 產出時機 | 說明 |
+|------|------|----------|------|
+| **分析文件** | `docs/PRD.md` | Phase 1 | 需求規格、User Story、驗收條件 |
+| **設計文件** | `docs/ARCHITECTURE.md` | Phase 1 | 技術架構、模組設計、資料流 |
+| | `DECISIONS.md` | Phase 1 起持續更新 | 架構決策紀錄 |
+| | `CLAUDE.md` | Phase 1 | 開發指引（Claude Code 讀取） |
+| **測試文件** | `docs/TEST-PLAN.md` | Phase 1 | 測試策略、測試案例、覆蓋率目標 |
+| | `docs/TEST-REPORT.md` | Phase 2 每個 Sprint 更新 | 測試執行結果、通過率、已知問題 |
+| **使用手冊** | `docs/USER-GUIDE.md` | Phase 2 Sprint 5 起 | 功能說明、操作步驟、截圖 |
+| **安裝手冊** | `docs/INSTALL-GUIDE.md` | Phase 2 Sprint 1 起 | 環境需求、安裝步驟、常見問題 |
+| **維運文件** | `docs/CHANGELOG.md` | Phase 2 起持續更新 | 版本變更紀錄 |
+
+### 📝 文件規則
+
+1. **Phase 1 結束前**：分析 + 設計 + 測試計劃 + 安裝手冊初版 必須完成
+2. **每個 Sprint 結束**：更新 TEST-REPORT.md + CHANGELOG.md
+3. **Phase 3 驗收前**：USER-GUIDE.md + INSTALL-GUIDE.md 必須完成
+4. **文件跟著 code 走**：功能變更時同步更新相關文件
+5. **安裝手冊必須讓非技術人員也能照著做**
+
+模板見 `assets/templates/` 目錄。
+
 ## 專案目錄結構
 
 每個專案初始化後的結構：
@@ -107,9 +135,14 @@ project-name/
 ├── DECISIONS.md               # 架構決策
 ├── README.md
 ├── docs/
-│   ├── PRD.md                 # 需求規格
-│   ├── ARCHITECTURE.md        # 技術架構
-│   └── TASKS.md               # 任務拆解
+│   ├── PRD.md                 # 需求規格（分析文件）
+│   ├── ARCHITECTURE.md        # 技術架構（設計文件）
+│   ├── TASKS.md               # 任務拆解
+│   ├── TEST-PLAN.md           # 測試計劃
+│   ├── TEST-REPORT.md         # 測試紀錄
+│   ├── USER-GUIDE.md          # 使用手冊
+│   ├── INSTALL-GUIDE.md       # 安裝手冊
+│   └── CHANGELOG.md           # 版本變更紀錄
 ├── .claude/
 │   └── agents/
 │       ├── coder.md           # Coding Agent
